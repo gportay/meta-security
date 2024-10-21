@@ -59,7 +59,7 @@ PACKAGECONFIG[samba] = "--with-samba, --with-samba=no, samba"
 PACKAGECONFIG[selinux] = "--with-selinux, --with-selinux=no --with-semanage=no, libselinux"
 PACKAGECONFIG[ssh] = "--with-ssh, --with-ssh=no, "
 PACKAGECONFIG[sudo] = "--with-sudo, --with-sudo=no, "
-PACKAGECONFIG[systemd] = "--with-initscript=systemd,--with-initscript=sysv,,python3-systemd python3-logging"
+PACKAGECONFIG[systemd] = "--with-initscript=systemd,--with-initscript=sysv"
 
 EXTRA_OECONF += " \
     --disable-cifs-idmap-plugin \
@@ -156,4 +156,13 @@ FILES:${PN} += "${base_libdir}/security/pam_sss*.so  \
 
 FILES:libsss-sudo = "${libdir}/libsss_sudo.so"
 
-RDEPENDS:${PN} = "bind bind-utils dbus libldb libpam libsss-sudo python3-core"
+RDEPENDS:${PN} = "bind \
+                  bind-utils \
+                  dbus \
+                  libldb \
+                  libpam \
+                  libsss-sudo \
+                  python3-core \
+                  python3-logging \
+                  python3-systemd \
+                  "
