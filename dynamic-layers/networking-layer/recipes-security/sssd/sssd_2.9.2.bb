@@ -59,7 +59,7 @@ PACKAGECONFIG[samba] = "--with-samba, --with-samba=no, samba"
 PACKAGECONFIG[selinux] = "--with-selinux, --with-selinux=no --with-semanage=no, libselinux"
 PACKAGECONFIG[ssh] = "--with-ssh, --with-ssh=no, "
 PACKAGECONFIG[sudo] = "--with-sudo, --with-sudo=no, "
-PACKAGECONFIG[systemd] = "--with-initscript=systemd,--with-initscript=sysv,,python3-systemd"
+PACKAGECONFIG[systemd] = "--with-initscript=systemd,--with-initscript=sysv,,python3-systemd python3-logging"
 
 EXTRA_OECONF += " \
     --disable-cifs-idmap-plugin \
